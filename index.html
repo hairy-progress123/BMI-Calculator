@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern BMI Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index</p>
+        </div>
+
+        <form id="bmi-form">
+            <div class="input-group-row">
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="25" min="2" max="120" required>
+                </div>
+                <div class="input-group">
+                    <label>Gender</label>
+                    <div class="gender-toggle">
+                        <input type="radio" id="male" name="gender" value="male" checked>
+                        <label for="male" class="gender-btn">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female" class="gender-btn">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="175" min="50" max="300" required>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="70" min="10" max="500" required>
+            </div>
+
+            <button type="submit" class="calculate-btn">Calculate BMI</button>
+        </form>
+
+        <div id="result-container" class="result-container hidden">
+            <h2 id="bmi-value">--</h2>
+            <p id="bmi-category">Category</p>
+            <div class="bmi-scale">
+                <div class="scale-segment underweight"></div>
+                <div class="scale-segment normal"></div>
+                <div class="scale-segment overweight"></div>
+                <div class="scale-segment obese"></div>
+                <div id="scale-indicator" class="scale-indicator"></div>
+            </div>
+            <p id="ideal-weight" class="ideal-weight-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
